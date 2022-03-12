@@ -5,4 +5,5 @@
 #include <stdio.h>
 int choice_int(va_list args);
 int _print_integer(int n);
+int _putchar(char c);
 #endif
