@@ -23,15 +23,15 @@ int _print_integer(int n)
 			n = n * (-1);
 			len++;
 		}
-		for (i = 0, n > 0, i++)
+		for (i = 0; n > 0; i++)
 		{
 			n = n / 10;
 		}
-		for (j = 1, i > 1, i--)
+		for (j = 1; i > 1; i--)
 		{
 			j = j * 10;
 		}
-		for (, j > 0, len++)
+		for (; j > 0; len++)
 		{
 			_putchar((n / j) % 10 + '0');
 			j = j / 10;
