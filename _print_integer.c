@@ -1,13 +1,12 @@
 #include "main.h"
 /**
- * _print_integer - porints the string with integers
+ * _print_integer - prints the string with integers
  * @n: integer to print
  * Return: lenght
  */
 int _print_integer(int n)
 {
-	int i;
-	int j;
+	int d, u;
 	int len = 0;
 
 	if (n == 0)
@@ -23,19 +22,21 @@ int _print_integer(int n)
 			n = n * (-1);
 			len++;
 		}
-		for (i = 0; n > 0; i++)
+		if (n > 0 && n < 10)
 		{
-			n = n / 10;
+			_putchar(n);
+			len++;
 		}
-		for (j = 1; i > 1; i--)
-		{
-			j = j * 10;
-		}
-		for (; j > 0; len++)
-		{
-			_putchar((n / j) % 10 + '0');
-			j = j / 10;
-		}
+		if (n >= 10 && n <= 99)
+			for (d = n % 10; d <= 1;)
+			{
+				for (u = n / 10; u < 10;)
+				{
+					_putchar(d);
+					_putchar(u);
+					len++;
+				}
+			}
 	}
 	return (len);
 }
