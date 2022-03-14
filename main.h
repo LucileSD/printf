@@ -3,6 +3,14 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdio.h>
+
+
+typedef struct print
+{
+	char *t;
+	int (*f)(va_list);
+} print_t;
+
 int choice_int(va_list args);
 int _print_integer(int n);
 int _putchar(char c);
