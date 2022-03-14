@@ -4,10 +4,11 @@
  * @n: integer to print
  * Return: lenght
  */
-int _print_integer(int n)
+int _print_integer(va_list args)
 {
-	int d, u;
-	int len = 0;
+	int d, u, n;
+
+	int len = va_arg(args, int);
 
 	if (n == 0)
 	{
@@ -24,7 +25,7 @@ int _print_integer(int n)
 		}
 		if (n > 0 && n < 10)
 		{
-			_putchar(n);
+			_putchar(len);
 			len++;
 		}
 		if (n >= 10 && n <= 99)

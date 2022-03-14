@@ -1,70 +1,52 @@
 #include "main.h"
-
 /**
- * check_for_specific_character - check if there is a specifique format.
- * @format: format.
- * 
- * Return: Pointer to function else NULL.
+ *
+ *
  */
-static int (*check_for_specific_character(const char *format))(va_list)
+int _printf(const char *const format, ...)
 {
-    unisgned int;
-    print_t p[] ={
-        {"c", print_c},
-        {"o", print_o},
-        {"i", print_i},
-        {"s", print_s},
-        {"d", print d},
-        {NULL, NULL}
-    };
+	type_t choices[] = {
+		{"c", _print_char},
+		{"s", _print_string},
+		{"d", _print_integer},
+		{"i", _print_integer},
+		{NULL, NULL}};
 
-    for (i = 0; p[i].t != NULL; i++)
-    {
-        if(*(p[i].t) == *format)
-        {
-            break;
-        }
-    }
-    return(p[i].f);
-}
-int _printf(const char *format, ...)
-{
-    unsigned int = 0, count = 0;
-    va_list valist;
-    int (*f)(va_list);
+	int i;
+	char *s;
+	char *traverse;
 
-    if (format == NULL)
-        return (-1);
-    va_start(format == NULL);
+	va_list args;
+	va_start(args, format);
 
-    while (format[i])
-    {
-        for (; format[i] != '%' && format[i]; i++)
-        {
-            _putchar(format[i]);
-            count++;
-        }
-        if (!format[i])
-            return (count);
-        f = check_for_specific_character(&format[i + j]);
-
-        if (f != NULL)
-        {
-            count += f(valist);
-            i += 2;
-            continue;
-        }
-        if (!format[i + 1])
-        {
-            return (-1);
-            _putchar (format[i]);
-            count++;
-        }
-        if (format[i + 1] == '%')
-            i += 2;
-        else
-            i++;
-    }
-    va_end(va_list);
-    return (count);
+	for (traverse = format; *traverse != '\0'; traverse++)
+	{
+		while (*traverse != '%')
+		{
+			choices[1]._print(s);
+			traverse++;
+		}
+		traverse++;
+		while (*traverse = '%')
+		{
+			if (*traverse + 1 == 'c')
+			{
+				choices[0]._print(s);
+			}
+			if (*traverse + 1 == 's')
+			{
+				choices[1]._print(s);
+			}
+			if (*traverse + 1 == 'd')
+			{
+				choices[2]._print(s);
+			}
+			if (*traverse + 1 == 'i')
+			{
+				choices[3]._print(s);
+			}
+		}
+	}
+	va_end(args);
+	return (traverse);
 }

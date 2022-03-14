@@ -13,13 +13,16 @@ int _print_hexa(int i)
 
 	quotient = decimalnum;
 
+	_putchar('0');
+	_putchar('x');
+
 	while (quotient != 0)
 	{
 		remainder = quotient % 16;
 		if (remainder < 10)
-			hexadecimalnum[j++] = 48 + remainder;
+			hexadecimalnum[j++] = '0' + remainder;
 		else
-			hexadecimalnum[j++] = 55 + remainder;
+			hexadecimalnum[j++] = '7' + remainder;
 		quotient = quotient / 16;
 
 		_putchar(hexadecimalnum);
