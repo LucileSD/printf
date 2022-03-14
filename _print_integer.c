@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _print_integer - prints the string with integers
- * @n: integer to print
+ * @args: arguments
  * Return: lenght
  */
 int _print_integer(va_list args)
