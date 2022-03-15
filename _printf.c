@@ -5,7 +5,7 @@
  *Return: the sentence
  */
 
-int _printf(struct type_t choices, char *format, ...)
+int _printf(struct print, char *format, ...)
 {
 	int *s;
 	int *traverse;

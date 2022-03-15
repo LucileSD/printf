@@ -5,7 +5,7 @@
  * @return int(*)(va_list)
  */
 
-int (*check_for_specific_character(const char *format, ...))(va_list)
+int(*check_for_specific_character(const char *format, ...))
 {
 	int i;
 	int *p;
