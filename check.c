@@ -7,8 +7,7 @@
 
 int(*check_for_specific_character(const char *format, ...))
 {
-	int i;
-	int *p;
+	int i = 0;
 	type_t choices[] = {
 		{"c", _print_char},
 		{"s", _print_string},
