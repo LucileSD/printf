@@ -17,7 +17,8 @@ typedef struct print
 
 int _print_integer(va_list args);
 int _putchar(char c);
-int _printf(const char *const format, ...);
+int _printf(struct type_t choices, char *format, ...);
 int _print_char(va_list c);
 int _print_string(va_list s);
+static int (*check_for_specific_character(const char *format, ...))(va_list);
 #endif
