@@ -19,8 +19,8 @@ int(*check_for_specific_character(const char *format, ...))
 	{
 		if (*(choices[i].t) == *format)
 		{
-			break;
+			return (choices[i].f);
 		}
 	}
-	return (choices[i].f);
+	return (NULL);
 }
