@@ -6,12 +6,12 @@
  * _char - print's a character.
  * @c: charactere to print.
  * 
- * Return: always 1.
+ * Return: number od char printed.
  */
-int _char(va_list.choice)
+int _print_char(va_list c)
 {
-    char ch = (char)va_arg(c, int)
+    char ch = (char)va_arg(c, int);
 
     _putchar(ch);
-    return(1);
+    return(1); 
 }
