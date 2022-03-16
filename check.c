@@ -5,23 +5,26 @@
  * @return int(*)(va_list)
  */
 
-int(*check_for_specific_character(const char *format, ...))
+int (*check_for_specific_character(const char *format))(va_list)
 {
-	int i;
-	int *choices
-	type_t choices[] = {
-		{"c", _print_char},
-		{"s", _print_string},
-		{"d", _print_integer},
-		{"i", _print_integer},
-		{NULL, NULL}};
+	unsigned int i;
 
-	for (i = 0; choices[i].t != NULL; i++)
+	print_t p[] = {
+		{"c", print_c},
+		{"s", print_s},
+		{"i", print_i},
+		{"d", print_d},
+		{"o", print_o},
+		{NULL, NULL}
+	};
+
+	for (i = 0; p[i].t != NULL; i++)
 	{
-		if (*(choices[i].t) == *format)
+		if (strcmp((p[i].t), format))
 		{
 			break;
 		}
+		return (p[i].f);
 	}
-	return (choices[i].f);
+	return (0);
 }

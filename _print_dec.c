@@ -3,7 +3,7 @@
  * _print_dec - percent i choose the good format
  *
  */
-int _print_dec(int *array, int n)
+int print_dec(int *array, int n)
 {
 	int i;
 	int decimal = 0, rem;
