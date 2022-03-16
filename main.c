@@ -7,10 +7,11 @@
  *
  * Return: Always 0
  */
-int main()
+int main(void)
 {
-   printf ("Characters: %c %c \n", 'a', 65);
-   printf ("Decimals: %d \n", 1977);
-   printf ("%s \n", "A string");
-   return 0;
+    printf ("Characters: %c %c \n", 'a', 65);
+    _printf("Characters: %c %c \n", 'a', 65);
+   printf ("Decimals: %d\n", 1977);
+    
+    return (0);
 }

@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * _print_integer - prints the string with integers
- * @args: arguments
+ * _print_i - prints the string with integers
+ * @i: integer to print
  * Return: lenght
  */
-int print_integer(va_list i)
+int print_i(va_list i)
 {
 	int a[10];
 	int j, m, n, sum, count;
@@ -23,7 +23,7 @@ int print_integer(va_list i)
 		_putchar('-');
 		count++;
 		for (j = 0; j < 10; j++)
-			a[j] *= - 1;
+			a[j] *= -1;
 	}
 	for (j = 0, sum = 0; j < 10; j++)
 	{

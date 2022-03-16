@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * _print_octal - prints the string with octal
- * @n: octal to print
+ * print_o - prints the string with octal
+ * @o: octal to print
  * Return: lenght
  */
-int print_octal(va_list o)
+int print_o(va_list o)
 {
 	unsigned int a[11];
 	unsigned int i, m, n, sum;

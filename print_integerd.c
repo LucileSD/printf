@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * _print_integerd - prints a decimal
+ * print_d - prints a decimal
  * @d: decimal to print
  *
  * Return: number of chars and digits printed
  */
-int print_integerd(va_list d)
+int print_d(va_list d)
 {
 	int a[10];
 	int j, m, n, sum, count;

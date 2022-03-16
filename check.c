@@ -20,11 +20,11 @@ int (*check_for_specific_character(const char *format))(va_list)
 
 	for (i = 0; p[i].t != NULL; i++)
 	{
-		if (strcmp((p[i].t), format))
+		if (*(p[i].t) == *format)
 		{
 			break;
 		}
-		return (p[i].f);
 	}
-	return (0);
+	return (p[i].f);
 }
+

@@ -16,27 +16,21 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i])
 	{
-	for (; format[i] != '%' && format[i]; i++)
-	{
-		_putchar(format[i]);
-		sum++;
-	}
+		for (; format[i] != '%' && format[i]; i++)
+		{
+			_putchar(format[i]);
+			sum++;
+		}
 		if (!format)
-		return (sum);
-			f = (*check_for_specific_character(&format[i]));
+			return (sum);
+		f = (*check_for_specific_character(&format[i+1]));
 		if (f != NULL)
 		{
 			sum += f(args);
 			continue;
 		}
 		if (!format[i + 1])
-		return (-1);
-		_putchar(format[i]);
-		sum++;
-		if (format[i + 1] == '%')
-		i += 2;
-		else
-		sum++;
+			return (-1);
 	}
 	va_end(args);
 	return (sum);
