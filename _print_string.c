@@ -3,10 +3,10 @@
 /**
  * @print_s - prints a string.
  * @s: string.
- * 
- * Return: number of char printed. 
+ *
+ * Return: number of char printed.
  */
-int _print_s(va_list s)
+int _print_string(va_list s)
 {
     int i;
     char *str = va_arg(s, char *);

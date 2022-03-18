@@ -10,7 +10,6 @@ int _printf(const char *const format, ...)
 	const char *traverse;
 	int i = 0;
 	int sum = 0;
-	int choice;
 	va_list args;
 
 	va_start(args, format);
@@ -20,8 +19,7 @@ int _printf(const char *const format, ...)
 		if (traverse[i] == '%' && traverse[i + 1])
 		{
 			i++;
-			choice = check_for_specific_character(traverse[i]);
-			sum += choices(args);
+			sum += check_for_specific_character(traverse[i])(args);
 		}
 		else
 		{
