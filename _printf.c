@@ -5,26 +5,40 @@
  *Return: the sentence
  */
 
-int _printf(const char *const format, ...)
+int _printf(const char *format, ...)
 {
-	const char *traverse;
-	int i = 0;
+	
+	unsigned int i = 0;
 	int sum = 0;
+<<<<<<< HEAD
+=======
+	int (*f)(va_list);
+>>>>>>> 29440fbc983971e080e1f3a909f889cd9448d90f
 	va_list args;
 
 	va_start(args, format);
-
-	for (traverse = format; traverse[i] != '\0'; i++)
+	while (format[i])
 	{
-		if (traverse[i] == '%' && traverse[i + 1])
+		for (; format[i] != '%' && format[i]; i++)
 		{
+<<<<<<< HEAD
 			i++;
 			sum += check_for_specific_character(traverse[i])(args);
+=======
+			_putchar(format[i]);
+			sum++;
+>>>>>>> 29440fbc983971e080e1f3a909f889cd9448d90f
 		}
-		else
+		if (!format)
+			return (sum);
+		f = (*check_for_specific_character(&format[i+1]));
+		if (f != NULL)
 		{
-			sum += _putchar(traverse[i]);
+			sum += f(args);
+			continue;
 		}
+		if (!format[i + 1])
+			return (-1);
 	}
 	va_end(args);
 	return (sum);

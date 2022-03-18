@@ -9,9 +9,9 @@
  */
 int main(void)
 {
+    printf("Characters: %c %c \n", 'a', 65);
+    _printf("Characters: %c %c \n", 'a', 65);
+    printf("Decimals: %d\n", 1977);
 
-	_printf("String:[%s]\n", "I am a string !");
-	printf("String:[%s]\n", "I am a string !");
-
-	return (0);
+    return (0);
 }

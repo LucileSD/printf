@@ -3,12 +3,12 @@
 #include <stdarg.h>
 
 /**
- * _char - print's a character.
+ * print_char - print's a character.
  * @c: charactere to print.
  *
- * Return: number od char printed.
+ * Return: 1.
  */
-int _print_char(va_list c)
+int print_c(va_list c)
 {
     char ch = (char)va_arg(c, int);
 
