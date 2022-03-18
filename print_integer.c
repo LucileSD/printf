@@ -1,38 +1,42 @@
 #include "main.h"
 /**
  * _print_i - prints the string with integers
- * @i: integer to print
+ * @i: argument
  * Return: lenght
  */
 int print_i(va_list i)
 {
-	int a[10];
-	int j, m, n, sum, count;
+	unsigned int m;
+	int n, i, k, len = 0;
 
 	n = va_arg(i, int);
-	count = 0;
-	m = 1000000000;
-	a[0] = n / m;
-	for (j = 1; j < 10; j++)
-	{
-		m /= 10;
-		a[j] = (n / m) % 10;
-	}
 	if (n < 0)
 	{
+		n *= -1;
 		_putchar('-');
-		count++;
-		for (j = 0; j < 10; j++)
-			a[j] *= -1;
+		len++;
 	}
-	for (j = 0, sum = 0; j < 10; j++)
+	m = n;
+	k = 0;
+	while (m / 10 > 0)
 	{
-		sum += a[j];
-		if (sum != 0 || j == 9)
-		{
-			_putchar('0' + a[j]);
-			count++;
-		}
+		m /= 10;
+		k++;
 	}
-	return (count);
+	m = n;
+	while (k != 0)
+	{
+		for (i = 0; i < k; i++)
+		{
+			m /= 10;
+		}
+		m %= 10;
+		_putchar(m + '0');
+		len++;
+		k--;
+		m = n;
+	}
+	_putchar(m % 10 + '0');
+	len++;
+	return (len);
 }
