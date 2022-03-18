@@ -7,7 +7,7 @@
 int print_i(va_list i)
 {
 	unsigned int m;
-	int n, i, k, len = 0;
+	int n, j, k, len = 0;
 
 	n = va_arg(i, int);
 	if (n < 0)
@@ -26,7 +26,7 @@ int print_i(va_list i)
 	m = n;
 	while (k != 0)
 	{
-		for (i = 0; i < k; i++)
+		for (j = 0; j < k; i++)
 		{
 			m /= 10;
 		}
