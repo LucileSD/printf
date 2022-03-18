@@ -26,7 +26,7 @@ int print_i(va_list i)
 	m = n;
 	while (k != 0)
 	{
-		for (j = 0; j < k; i++)
+		for (j = 0; j < k; j++)
 		{
 			m /= 10;
 		}

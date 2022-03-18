@@ -14,20 +14,22 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-	while (format[i])
+	while (format[i] != '\0')
 	{
 		for (; format[i] != '%' && format[i]; i++)
 		{
 			_putchar(format[i]);
 			sum++;
 		}
-		i++;
+		if (format[i])
+			i++;
 		if (!format)
 			return (sum);
-		f = (*check_for_specific_character(&format[i + 1]));
-		if (f != NULL)
+		if (format[i - 1] == '%')
 		{
+			f = (*check_for_specific_character(&format[i]));
 			sum += f(args);
+			i++;
 			continue;
 		}
 		if (!format[i + 1])
