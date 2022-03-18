@@ -1,18 +1,20 @@
+.TH man 3 "16th march 2022"_printfman page
+.SH NAME
 _PRINTF
-NAME 
+.SH NAME 
         _printf
 
-SYNOPSIS
+.SH SYNOPSIS
         #include "main.h"
         #include <stdarg.h>
 
         int _printf(const char *const format, ...)
 
-DESCRIPTION
+.SH DESCRIPTION
         The function in the _printf() give an outpout according to a format, the function write the output with a string format 
         with the specifies of '%' 
 
-Conversion specifiers
+.SH Conversion specifiers
         A charater specifies the type of conversion of the argument
     d, i allow an output format of an int argument in decimal
     o  allows an output format of an int argument in octal
@@ -20,10 +22,10 @@ Conversion specifiers
     c  allows an output format of a char in a character
     s  allows an output format of a char in a string
 
-RETURN VALUE
+.SH RETURN VALUE
         in case of success the function return the number of characters printed
 
-EXAMPLE
+.SH EXAMPLE
         To print a sentence :
             #include "main."
             #include <stdarg.h>
@@ -35,5 +37,4 @@ EXAMPLE
             _printf("Negative:[%d]\n", -762534)
 
 
-                                            2022-03-16
                                     Mustapha Abourar - Lucile Deleforge
