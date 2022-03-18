@@ -13,7 +13,7 @@ int (*check_for_specific_character(const char *format))(va_list)
 		{"c", print_c},
 		{"s", print_s},
 		{"i", print_i},
-		{"d", print_d},
+		{"d", print_i},
 		{"o", print_o},
 		{NULL, NULL}};
 

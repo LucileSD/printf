@@ -21,6 +21,7 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			sum++;
 		}
+		i++;
 		if (!format)
 			return (sum);
 		f = (*check_for_specific_character(&format[i + 1]));
