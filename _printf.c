@@ -7,13 +7,10 @@
 
 int _printf(const char *format, ...)
 {
-	
+
 	unsigned int i = 0;
 	int sum = 0;
-<<<<<<< HEAD
-=======
 	int (*f)(va_list);
->>>>>>> 29440fbc983971e080e1f3a909f889cd9448d90f
 	va_list args;
 
 	va_start(args, format);
@@ -21,17 +18,12 @@ int _printf(const char *format, ...)
 	{
 		for (; format[i] != '%' && format[i]; i++)
 		{
-<<<<<<< HEAD
-			i++;
-			sum += check_for_specific_character(traverse[i])(args);
-=======
 			_putchar(format[i]);
 			sum++;
->>>>>>> 29440fbc983971e080e1f3a909f889cd9448d90f
 		}
 		if (!format)
 			return (sum);
-		f = (*check_for_specific_character(&format[i+1]));
+		f = (*check_for_specific_character(&format[i + 1]));
 		if (f != NULL)
 		{
 			sum += f(args);
